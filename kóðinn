@@ -1,0 +1,25 @@
+#include <CapacitiveSensor.h>
+CapacitiveSensor capSense = CapacitiveSensor(4,2);
+
+int threshold = 900;
+
+const int ledPin = 30;
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+  Serial.println("abc");
+}
+
+void loop(){
+  long sensorValue = capSense.capacitiveSensor(10);
+  Serial.println(sensorValue);
+  
+  if(sensorValue > threshold){
+    digitalWrite(ledPin, HIGH);
+  }
+  else{
+    digitalWrite(ledPin, LOW);
+  }
+  delay(10);
+}
