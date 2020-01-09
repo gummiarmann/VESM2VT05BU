@@ -3,7 +3,7 @@ CapacitiveSensor capSense = CapacitiveSensor(4,2);
 
 int threshold = 900;
 
-const int ledPin = 30;
+const int ledPin = 12;
 
 void setup(){
   Serial.begin(9600);
